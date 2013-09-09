@@ -1,6 +1,7 @@
 To install/use the helper functions, download and place helper-funcs.el
-to a directory of your choosing and in your .emacs file you add the line:
-    (require 'helper-funcs)
+to a directory of your choosing and in your .emacs file you add the following:
+   (add-to-list 'load-path THAT_DIRECTORY)
+   (require 'helper-funcs)
 
 If you want to use auto-indent for a prog mode you can edit the variable
 called 'prog-mode-hooks' in the helper-funcs.el file and add the hook you want.
