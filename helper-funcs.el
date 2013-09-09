@@ -6,10 +6,6 @@
 	  (cons (concat "\\" extension "\\'") prog-mode))
 	 auto-mode-alist)))
 
-
-; List of languages we want to use auto-indent.
-(setq prog-mode-hooks '(emacs-lisp-mode-hook python-mode-hook))
-
 ; Set up the binding to use as RET rebind.
 (global-set-key (kbd "C-j") 'newline-and-indent)
 
@@ -25,7 +21,7 @@
 
 ; Add auto-indentation to the specified languages.
 ; (mapc FUNCTION to apply to LIST)
-(defun add-auto-indentation ()
+(defun add-auto-indentation (prog-mode-hooks)
   (mapc 'insert-auto-indent-hook prog-mode-hooks))
 
 (provide 'helper-funcs)
