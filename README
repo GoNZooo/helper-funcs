@@ -1,11 +1,9 @@
 To install/use the helper functions, download and place helper-funcs.el
-to a directory of your choosing and in your .emacs file you add the following:
+in a directory of your choosing and in your .emacs file you add the following:
 
    (add-to-list 'load-path THAT_DIRECTORY)
    (require 'helper-funcs)
 
-If you want to use auto-indent for a prog mode you can edit the variable
-called 'prog-mode-hooks' in the helper-funcs.el file and add the hook you want.
 To use the auto-indent you call, for example, the following:
 
     (add-auto-indentation '(emacs-lisp-mode-hook python-mode-hook))
@@ -13,5 +11,10 @@ To use the auto-indent you call, for example, the following:
 To add a file extension binding you can call the function:
 
     (add-auto-mode extension prog-mode)
+    
+for example:
 
+    (add-auto-mode ".rkt" 'scheme-mode)
+
+(Do note that the prog-mode is sent as a symbol, hence the ')
 The file will auto start with that prog-mode when opened.
